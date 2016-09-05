@@ -1,4 +1,6 @@
 
+''' Part one: Strings and Integers '''
+
 # Determines the number of words in a string
 def word_count(string)
   string.split(" ").length
@@ -134,4 +136,25 @@ end
 
 def concat(num_one, num_two)
   (num_one.to_s + num_two.to_s).to_i
+end
+
+''' Part two: Arrays and Exceptions '''
+
+# Determines if a passed in array contains a string
+def has_string?(array)
+  found_string = false
+  array.each do |item|
+    if item.respond_to?("split")
+      found_string = true
+      break
+    end
+  end
+  found_string
+end
+
+def sort_by_length(array)
+  sorted = array.sort do |a, b|
+    a.length <=> b.length
+  end
+  sorted
 end

@@ -1,6 +1,7 @@
 
 require_relative "./code_quizzes"
 
+''' Part one: Strings and Integers '''
 describe "#word_count" do
   it "returns the number of words in a string" do
     string = "laughter, it's free"
@@ -183,5 +184,31 @@ describe "#concat" do
     num_two = 99
     expected = 4299
     expect(concat(num_one, num_two)).to eq expected
+  end
+end
+
+''' Part two: Arrays and Exceptions '''
+describe "#has_string?" do
+  it "returns true if the passed in array has a string element" do
+    array = [:bob, "the", 42]
+    expected = true
+
+    expect(has_string?(array)).to be expected
+  end
+
+  it "returns false if the passed in array does not have a string element" do
+    array = [:hello, :world, 43.5]
+    expected = false
+
+    expect(has_string?(array)).to be expected
+  end
+end
+
+describe "#sort_by_length" do
+  it "orders the words in an array from smallest to largest" do
+    array = ["apple", "banana", "cantaloupe", "pear"]
+    expected = ["pear", "apple", "banana", "cantaloupe"]
+    
+    expect(sort_by_length(array)).to eq expected
   end
 end
