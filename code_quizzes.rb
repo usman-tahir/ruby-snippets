@@ -158,3 +158,45 @@ def sort_by_length(array)
   end
   sorted
 end
+
+def mean(array)
+  count = array.length
+  sum = 0
+  array.each do |number|
+    sum += number
+  end
+  sum.to_f / count
+end
+
+def hashify(array)
+  hash = {}
+  array.each_with_index do |element, index|
+    if index % 2 == 0
+      hash[array[index]] = array[index + 1]
+    end
+  end
+  hash
+end
+
+def super_compact(array)
+  array.reject do |element|
+    element.nil? || element.empty?
+  end
+end
+
+def mode(array)
+  unique = array.uniq
+  count = {}
+  unique.each do |element|
+    count[element] = 0
+  end
+
+  array.each do |element|
+    count[element] += 1
+  end
+
+  most = count.max_by do |key, value|
+    value
+  end
+  most[0]
+end

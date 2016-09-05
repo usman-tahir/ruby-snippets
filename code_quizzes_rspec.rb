@@ -208,7 +208,46 @@ describe "#sort_by_length" do
   it "orders the words in an array from smallest to largest" do
     array = ["apple", "banana", "cantaloupe", "pear"]
     expected = ["pear", "apple", "banana", "cantaloupe"]
-    
+
     expect(sort_by_length(array)).to eq expected
+  end
+end
+
+describe "#mean" do
+  it "calculates average" do
+    array = [1, 2, 3, 4]
+    expected = 2.5
+
+    expect(mean(array)).to eq expected
+  end
+end
+
+describe "#hashify" do
+  it "converts an array to a hash" do
+    array = [:a, :b, :c, :d]
+    expected = {
+      a: :b,
+      c: :d
+    }
+
+    expect(hashify(array)).to eq expected
+  end
+end
+
+describe "#super_compact" do
+  it "removes nil and empty elements" do
+    array = ["hello", "", {}, "world", [], nil]
+    expected = ["hello", "world"]
+
+    expect(super_compact(array)).to eq expected
+  end
+end
+
+describe "#mode" do
+  it "returns the most common element" do
+    array = ["a", "b", "c", "a", "a", "b"]
+    expected = "a"
+
+    expect(mode(array)).to eq expected
   end
 end
