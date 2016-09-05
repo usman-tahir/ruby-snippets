@@ -200,3 +200,24 @@ def mode(array)
   end
   most[0]
 end
+
+def symbolize(array)
+  result = array.map do |element|
+    element.to_sym
+  end
+  result
+end
+
+def index_of_max(array)
+  array.each_with_index.max[1]
+end
+
+def merge(array_of_hashes)
+  result = {}
+  array_of_hashes.inject(result) do |memo, hash|
+    hash.each do |key, value|
+      (memo[key] ||= []) << value
+    end
+    memo
+  end
+end

@@ -251,3 +251,44 @@ describe "#mode" do
     expect(mode(array)).to eq expected
   end
 end
+
+describe "#symbolize" do
+  it "creates an array of symbols" do
+    array = ["a", "b", "c"]
+    expected = [:a, :b, :c]
+
+    expect(symbolize(array)).to eq expected
+  end
+end
+
+describe "#index_of_max" do
+  it "returns the index of the largest element in an array" do
+    array = [1, 2, 3]
+    expected = 2
+
+    expect(index_of_max(array)).to eq expected
+  end
+end
+
+describe "#merge" do
+  it "converts an array of hashes to a single hash" do
+    array_of_hashes = [
+      {
+        a: 1,
+        b: 2
+      },
+      {
+        a: 3,
+        b: 24,
+        c: 4
+      }
+    ]
+    expected = {
+      a: [1, 3],
+      b: [2, 24],
+      c: [4]
+    }
+
+    expect(merge(array_of_hashes)).to eq expected
+  end
+end
