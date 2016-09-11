@@ -78,6 +78,23 @@ describe "#Human" do
       expected = "John Public"
       expect(human.name).to eq expected
     end
-  end
 
+    it "returns false if the entered name is a blank string or nil" do
+      info = {
+        name: "John Doe",
+        age: 18,
+        gender: "male"
+      }
+      human = Human.new(info)
+
+      # Initial name reading
+      unchanged_name = human.name
+      expect(human.name).to eq unchanged_name
+
+      # Changing the name to an empty string
+      human.set_name("")
+      expected = unchanged_name
+      expect(human.name).to eq expected
+    end
+  end
 end
