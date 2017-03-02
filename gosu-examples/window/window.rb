@@ -8,7 +8,7 @@ class GameWindow < Gosu::Window
     @background_image = Gosu::Image.new('./img/bricks.png', :tileable => true)
 
     @player = Player.new
-    @player.warp(10, 10)
+    @player.warp(125, 125)
   end
 
   def update
