@@ -23,10 +23,10 @@ when "list"
     counter = 1
     file.readlines.each do |line|
       name, created, completed = read_todo(line)
-      printf("%3d - %s\n", counter, name)
-      printf("      Completed: %s\n", completed)
+      printf("%3d. %s\n", counter, name)
+      printf("      Created: %s\n", created)
       unless completed.nil?
-        printf("      Completed: %s\n", completed)
+        printf("      Completed: %s\n\n", completed)
       end
 
       counter += 1
