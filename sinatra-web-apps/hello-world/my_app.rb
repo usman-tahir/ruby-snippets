@@ -2,11 +2,13 @@
 require "sinatra"
 
 class HelloWorldApp < Sinatra::Base
-    get '/' do
-        "Hello World!"
-    end
+  # Simplification of routes
+  get '/?:name?' do
+  	"Hello, #{params[:name] ? params[:name] : 'world'}!"
+  end
 
-    get '/:name' do
-        "Hello, #{params[:name]}!"
-    end
+  # Specifying an optional greeting
+  get '/:greeting/?:name?' do
+  	"#{params[:greeting]}, #{params[:name] ? params[:name] : 'world'}!"
+  end
 end
