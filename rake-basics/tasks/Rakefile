@@ -21,3 +21,5 @@ end
 task :ready_for_the_day => [:turn_off_alarm, :groom_self, :make_coffee, :walk_dog] do
   puts "Ready for the day!"
 end
+
+task :default => :ready_for_the_day
